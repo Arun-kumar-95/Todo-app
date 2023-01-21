@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+<script src="../js/index.js" type="text/javascript" defer></script>
+
+
+<div class="app__container">
+
+    <div class="owner__wrapper">
+        <h1>Whats up,</h1>
+        <form action="" method="post">
+            <input value="Arun kumar" type="text" placeholder="Enter name" name="owner" autocomplete="off" autofocus
+                required>
+        </form>
+    </div>
+
+    <div class="create_todo_wrapper seperator">
+        <form action="" class="todo-form" method="POST">
+            <h3>CREATE A TODO</h3>
+
+            <h2>Write your todos here ?</h2>
+            <input type="text" name="todo" placeholder="eg wake up early">
+
+
+            <div class="pick__category__wrapper seperator">
+                <p>Pick a category</p>
+                <div class="pick__category__container">
+                    <div class="category">
+                        <button id="btnBusisness" class="btn" data-category="busisness"></button>
+                        <p>Busisness</p>
+                    </div>
+                    <div class="category">
+                        <button id="btnPersonal" class="btn" data-category="personal"></button>
+                        <p>Personal</p>
+                    </div>
+                    <div class="category">
+                        <button id="btnImportant" class="btn" data-category="important"></button>
+                        <p>Important</p>
+                    </div>
+                    <div class="category">
+                        <button id="btnOther" class="btn" data-category="other"></button>
+                        <p>Other</p>
+                    </div>
+                </div>
+            </div>
+
+            <button type="button" class="btnTodo">Add Todos</button>
+        </form>
+    </div>
+</div>
