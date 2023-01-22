@@ -3,14 +3,19 @@ const todosSchema = new mongoose.Schema({
   todoTask: {
     type: String,
     required: [true, "Write your todos"],
+    lowercase: true,
   },
   date: {
     type: Date,
     required: [true, "Select Due Date"],
   },
-  owner: {
+  category: {
+    type: String,
+    enum: ["Busisness", "Personal", "Important", "Other"],
+  },
+  user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Owner",
+    ref: "User",
   },
 
   isCompleted: {
@@ -23,4 +28,4 @@ const todosSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model(Todos, todosSchema);
+module.exports = mongoose.model("Todos", todosSchema);
