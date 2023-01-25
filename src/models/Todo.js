@@ -13,6 +13,7 @@ const todosSchema = new mongoose.Schema({
     type: String,
     enum: ["Busisness", "Personal", "Important", "Other"],
   },
+  
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",

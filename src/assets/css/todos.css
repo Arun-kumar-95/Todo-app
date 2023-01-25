@@ -1,8 +1,9 @@
 
-    
-  /* ==========  TODO list wrapper  ============ */
-  
-  
+ 
+  /* ==========  
+     todo list wrapper  
+     ============ */
+
   div.todo_list_wrapper{
     padding:1em 2%;
   }
@@ -17,7 +18,34 @@
 
 
 
-  /* ==========  TODO list   ============ */
+  /* ==========  
+    SIGN OUT
+   ============ */
+ 
+div.sign-out__container button.signout{
+    display: block;
+    margin-left:auto;
+    outline:1px solid;
+    background-color: var(--clr-green);
+    color: var(--clr-white);
+    padding:0.5rem 1rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+
+div.sign-out__container button.signout:focus,
+div.sign-out__container button.signout:hover{
+  outline:1px solid var(--clr-font);
+  outline-offset: 4px;
+}
+
+  /* ==========  
+     TODO list   
+     ============ */
 
   div.todo{
       display: inline-flex;
@@ -63,25 +91,78 @@ div.todo-item button span{
   margin-left:0.5em;
 }
   
-div.todo-controls{
-      margin-left:auto;
-    }
+ 
+/* ==== 
+   BATCH 
+=========*/
 
-  div.todo-controls button{
-      margin:0 0.35rem;
-      padding:0.25rem 0.5rem;
-      border-radius: 0.125rem;
-      -webkit-border-radius: 0.125rem;
-      -moz-border-radius: 0.125rem;
-      -ms-border-radius: 0.125rem;
-      -o-border-radius: 0.125rem;
+div.todo__batch , 
+button.btnEdit { 
+
+  padding:0.5rem 1rem;
+
+  outline: 1px solid;
+
+
+
+  border-radius:0.125rem;
+  -webkit-border-radius:0.125rem;
+  -moz-border-radius:0.125rem;
+  -ms-border-radius:0.125rem;
+  -o-border-radius:0.125rem;
 }
 
-  div.todo-controls button:hover ,
-  div.todo-controls button:focus {
-     outline:1px solid ;
-     background-color: var(--clr-bg);
+div.todo__batch {
+  margin-left:auto;
+  color: var(--clr-white);
+  margin-right:1em;
+  font-size: var(--h4-font);
+}
+button.btnEdit{
+  outline:1px solid;
+  padding:0.5rem 1rem;
+}
+
+button.btnEdit:hover ,
+button.btnEdit:focus {
+  outline:1px solid var(--clr-red);
+  background: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+ /* ==========
+  
+ ZERO TODO WRAPPER
+   ==========*/
+
+   div.zero__todo__wrapper{
+      padding-top:20vh;
   }
-
-
- 
+  
+  div.zero__todo__wrapper p{
+    margin-bottom:1.5em;
+   text-align: center;
+  }
+  
+  div.zero__todo__wrapper a{
+    display: block;
+    margin:0 auto;
+    width: 120px;
+      padding:0.5rem 1rem;
+      background-color: var(--clr-primary);
+      color: var(--clr-white);
+      font-size: var(--h4-font);
+      border-radius: 0.75rem;
+      -webkit-border-radius: 0.75rem;
+      -moz-border-radius: 0.75rem;
+      -ms-border-radius: 0.75rem;
+      -o-border-radius: 0.75rem;
+}

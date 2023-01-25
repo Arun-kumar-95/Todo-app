@@ -1,13 +1,13 @@
-const loginForm = document.querySelector(".login__form");
-loginForm.addEventListener("submit", async (e) => {
+const registerForm = document.querySelector(".register__form");
+registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const formData = new FormData(loginForm);
+  const formData = new FormData(registerForm);
   // converting form data into object
   const res = Object.fromEntries(formData);
   //   converting it into json
   const Payload = JSON.stringify(res);
 
-  const fetchResp = await fetch("/", {
+  const fetchResp = await fetch("/register", {
     method: "POST",
     body: Payload,
     headers: {
@@ -18,6 +18,6 @@ loginForm.addEventListener("submit", async (e) => {
 
   // converting into json
   const response = await fetchResp.json();
-  const {success , message} = response;
-  messageHandler(success, message, "todo");
+  const { success, message } = response;
+  messageHandler(success, message, " ");
 });

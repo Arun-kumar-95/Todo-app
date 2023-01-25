@@ -1,0 +1,207 @@
+
+
+/* ==========
+APP
+============*/
+div.app__container{
+    background-color: #fff;
+}
+#app{
+    
+    position: relative;
+    max-width: 30rem;
+    margin:auto;
+    background-color: #fff;
+    min-height: var(--min-height);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+/* ==========
+  OWNER  
+  ============*/
+
+  div.owner__wrapper{
+      padding:0 3%;
+    }
+    div.owner__wrapper h1{
+        padding:1em 0;
+    }
+    
+    div.owner__wrapper span.username{
+        text-transform: capitalize; 
+        font-size: var(--h2-font);
+        margin-left:0.5em;
+    }
+ 
+
+ 
+  div.create_todo_wrapper{
+      /* padding:1rem 2%; */
+      width:94%;
+      margin:0 3%;
+    }
+    
+    
+    div.create_todo_wrapper h3{
+        font-weight: var(--font-regular);
+        margin: 0.75em 0;
+        margin-bottom:1.2em;
+        font-size:var(--h3-font);
+    }
+    
+    div.create_todo_wrapper h4{
+        font-size: var(--h4-font);
+    }
+    
+    div.form-group {
+        margin-top: var(--mb-2) 
+    }
+
+    div.create_todo_wrapper input{
+        border:1px solid var(--clr-border);
+        width: 100%;
+        padding:0.5rem;
+        margin-top:0.5em;
+    }
+    div.create_todo_wrapper input:focus{
+        outline:1px solid var(--clr-primary);
+    }
+
+
+
+  /* ==========
+  CATEGORY  
+  ============ */
+
+  div.pick__category__wrapper p{
+   margin: 0.75em 0; 
+  }
+
+  
+  div.pick__category__container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px , 1fr)) ;
+    grid-gap:1em;
+  }
+
+  div.category{
+      border:1px solid var(--clr-border);
+      border-radius: 0.5rem;
+      -webkit-border-radius: 0.5rem;
+      -moz-border-radius: 0.5rem;
+      -ms-border-radius: 0.5rem;
+      -o-border-radius: 0.5rem;
+      padding:0.25rem 0;
+}
+    
+div.category:hover{
+    cursor: pointer;
+}
+
+    div.category p{
+     text-align: center;
+     color: var(--clr-text);
+     margin-top:var(--mb-1);
+    }
+
+  div.category button.btn{
+      display:block;
+      margin:auto;
+      width:1.5rem;
+      height:1.5rem;
+      margin-top: var(--mb-0-25);
+      border-radius: 50%;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      -o-border-radius: 50%;
+    
+  }
+
+    div.category button#btnBusisness{
+        outline:1px solid  var(--clr-green);
+    }
+    
+    div.category button#btnBusisness.active{
+        background-color: var(--clr-green);
+    }
+
+    div.category button#btnPersonal{
+        outline:1px solid  var(--clr-primary);
+    }
+    div.category button#btnPersonal.active{
+        background-color: var(--clr-primary);
+    }
+
+    div.category button#btnImportant{
+        outline:1px solid  var(--clr-red);
+    }
+    
+    div.category button#btnImportant.active{
+        background-color: var(--clr-red);
+    }
+
+
+    div.category button#btnOther{
+        outline:1px solid  var(--clr-font);
+    }
+    
+    div.category button#btnOther.active{
+        background-color: var(--clr-font);
+    }
+
+
+   button.btnTodo{
+        width: 100%;
+        display:block;
+        background-color: var(--clr-primary);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+        color: var(--clr-white);
+        padding:0.8rem 0;
+        margin-top: var(--mb-2);
+        border-radius: 0.25rem;
+        -webkit-border-radius: 0.25rem;
+        -moz-border-radius: 0.25rem;
+        -ms-border-radius: 0.25rem;
+        -o-border-radius: 0.25rem;
+}
+
+    button.btnTodo:hover{
+        outline: 1px solid var(--clr-primary);
+        opacity: 0.7;
+    }
+    button.btnTodo:focus {
+        outline: 1px solid var(--clr-font);
+    }
+
+
+    div.see__all__todos{ 
+        margin-top:var(--mb-2);
+   }
+    div.see__all__todos a{
+        text-decoration:underline;
+        font-weight: var(--font-regular);
+        text-transform: uppercase;
+        padding:1rem 2%;
+        font-size: var(--h3-font);
+    }
+
+    select{
+        width: 100%;
+        padding:0.5rem 0;   
+        margin-top:1em; 
+        border:none;
+        outline:1px solid var(--clr-border);
+    }
+
+    select:focus{
+     outline:1px solid var(--clr-primary);
+    }
+
+
+
+    @media only screen and (min-width: 576px) {
+     div.app__container{
+        background-color: var(--clr-bg);
+     }   
+    }

@@ -97,9 +97,8 @@ button:hover{
     
     min-width: var(--min-width);
     min-height: var(--min-height);
-    max-width: var(--max-width);
+    width: var(--max-width);
     font-family: var(--font-family);
-    /* background-color: var(--clr-bg); */
     line-height:1.432;
     font-size: var(--font-size);
     font-weight: var(--font-regular);

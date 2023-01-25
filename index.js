@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 
 // require the routes
 const mainRoute = require(path.join(process.cwd(), "./src/routes/v1/main.js"));
+const todoRoute = require(path.join(process.cwd(), "./src/routes/v1/todo.js"));
 
 // Not found
 const { notFound } = require(path.join(
@@ -42,8 +43,11 @@ app.set("case sensitive routing", true);
 //static files
 
 app.use(express.static(path.join(process.cwd(), "./src/assets")));
+app.use("/todo", express.static(path.join(process.cwd(), "./src/assets")));
 
 // using the routes
 app.use("/", mainRoute);
+
+app.use("/todo", todoRoute);
 
 app.use(notFound);

@@ -1,0 +1,89 @@
+<link rel="stylesheet" href="../css/todos.css">
+<link rel="stylesheet" href="../css/error.css">
+
+<script src="../js/todoHandler.js" type="text/javascript" defer></script>
+<script src="../js/Helpers.js" type="text/javascript" defer></script>
+
+<main>
+
+
+    <div class="app__container">
+        <% if(locals.todos.length> 0) { %>
+            <div class="todo_list_wrapper">
+
+                <div class="sign-out__container">
+                    <button class="signout">Sign out</button>
+                </div>
+
+                <h3>TODO LIST</h3>
+
+
+
+                <div class="todo__list__container">
+                    <div class="todo-list">
+
+                        <% locals.todos.forEach((todo)=>{%>
+                            <div class="todo" id="<%= todo._id%>">
+                                <form action="" method="POST">
+                                    <input type="checkbox" data-id="<%= todo._id%>" />
+                                </form>
+                                <div class="todo-item">
+                                    <p style="text-transform: capitalize;">
+                                        <%= todo.todoTask %>
+                                    </p>
+                                    <button>
+                                        <img src="../icons/date.png" alt="date">
+                                        <span>
+                                            <%= todo.date.toDateString()%>
+                                        </span>
+                                    </button>
+                                </div>
+
+
+                                <% if(todo.category=="Busisness" ){%>
+                                    <div class="todo__batch" style="background-color: var(--clr-green);">
+                                        <%= todo.category %>
+                                    </div>
+                                    <%}else if(todo.category=="Personal" ) {%>
+                                        <div class="todo__batch" style="background-color: var(--clr-primary);">
+                                            <%= todo.category %>
+                                        </div>
+                                        <%}else if(todo.category=="Important" ) {%>
+                                            <div class="todo__batch" style="background-color: var(--clr-red);">
+                                                <%= todo.category %>
+                                            </div>
+                                            <%}else {%>
+                                                <div class="todo__batch" style="background-color: var(--clr-font);">
+                                                    <%= todo.category %>
+                                                </div>
+                                                <%}%>
+
+
+
+
+                                                    <form action="/todo/update/<%= todo._id%>" method="GET">
+                                                        <button class="btn btnEdit" data-id="<%= todo._id %>">
+                                                            <img src="../icons/edit.svg" alt="edit icon">
+                                                        </button>
+                                                    </form>
+
+
+
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+
+            </div>
+            <%}else{%>
+                <div class="zero__todo__wrapper">
+                    <p style="color:red">*No todos found , create your first todos</p>
+                    <a href="/todo">Create a todo</a>
+                </div>
+                <%}%>
+
+
+    </div>
+
+    <%- include('./partials/_error'); %>
+</main>

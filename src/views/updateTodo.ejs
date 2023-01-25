@@ -1,0 +1,162 @@
+<link rel="stylesheet" href="../css/error.css" type="text/css">
+<link rel="stylesheet" href="../css/app.css" type="text/css">
+
+
+<script src="../js/updateTodo.js" type="text/javascript" defer></script>
+<script src="../js/Helpers.js" type="text/javascript" defer></script>
+
+<main>
+
+
+    <div class="app__container">
+        <div id="app">
+
+
+            <div class="owner__wrapper">
+                <h1 id="owner_id" data-id="<%= locals.user._id %>">Whats up, <span class="username">
+                        <%= locals.user.name %>
+                    </span>
+                </h1>
+
+
+            </div>
+
+            <div class="create_todo_wrapper" id="<%= locals.todo._id %>">
+
+                <h3>CREATE A TODO</h3>
+
+                <div class="form-group">
+                    <h2>Write your todos here ?</h2>
+                    <input value="<%=locals.todo.todoTask %>" type="text" name="todoTask" placeholder="eg wake up early"
+                        required autocomplete="off" />
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" required autoComplete="off" value="" id="date" />
+                </div>
+
+
+                <div class="pick__category__wrapper seperator">
+                    <p>Pick a category</p>
+                    <div class="pick__category__container">
+
+
+
+                        <% if(locals.todo.category=="Busisness" ) {%>
+                            <div class="category active" style="outline:1px solid green;">
+                                <button id="btnBusisness" class="btn active" data-category="Busisness"
+                                    data-color="green"></button>
+                                <p>Busisness</p>
+                            </div>
+                            <%}else{%>
+                                <div class="category">
+                                    <button id="btnBusisness" class="btn " data-category="Busisness"
+                                        data-color="green"></button>
+                                    <p>Busisness</p>
+                                </div>
+
+                                <%}%>
+
+
+
+                                    <% if(locals.todo.category=="Personal" ) {%>
+                                        <div class="category active" style="outline:1px solid purple">
+                                            <button id="btnPersonal" class="btn active" data-category="Personal"
+                                                data-color="purple"></button>
+                                            <p>Personal</p>
+                                        </div>
+
+                                        <%}else{%>
+
+                                            <div class="category">
+                                                <button id="btnPersonal" class="btn" data-category="Personal"
+                                                    data-color="purple"></button>
+                                                <p>Personal</p>
+                                            </div>
+
+                                            <%}%>
+
+
+                                                <% if(locals.todo.category=="Important" ) {%>
+                                                    <div class="category active" style="outline: 1px solid red">
+                                                        <button id="btnImportant" class="btn active"
+                                                            data-category="Important" data-color="red"></button>
+                                                        <p>Important</p>
+                                                    </div>
+                                                    <%}else{%>
+                                                        <div class="category">
+                                                            <button id="btnImportant" class="btn"
+                                                                data-category="Important" data-color="red"></button>
+                                                            <p>Important</p>
+                                                        </div>
+                                                        <%}%>
+
+
+                                                            <% if(locals.todo.category=="Other" ) {%>
+                                                                <div class="category active"
+                                                                    style="outline:1px solid black">
+                                                                    <button id="btnOther" class="btn active"
+                                                                        data-category="Other"
+                                                                        data-color="black"></button>
+                                                                    <p>Other</p>
+                                                                </div>
+
+                                                                <%}else{%>
+
+                                                                    <div class="category">
+                                                                        <button id="btnOther" class="btn"
+                                                                            data-category="Other"
+                                                                            data-color="black"></button>
+                                                                        <p>Other</p>
+                                                                    </div>
+                                                                    <%}%>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Todo Status</label>
+
+                    <select name="status" id="status">
+
+                        <% if(locals.todo.isCompleted) {%>
+                            <option value="">
+                                Status: Complete
+                            </option>
+
+                            <%}else{%>
+                                <option value="">
+                                    Status: In-Complete
+
+                                </option>
+
+                                <%}%>
+                                    <option value="true"> Completed</option>
+                                    <option value="false"> Not complete</option>
+                    </select>
+                </div>
+                <button type="button" class="btnTodo">Update Todo</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <%- include('./partials/_error'); %>
+
+</main>
+
+<script type="text/javascript" defer>
+
+    let dateStr = JSON.stringify('<%= locals.todo.date%>');
+    let isoDate = new Date(dateStr);
+    let todayDate = String(isoDate.getDate());
+    let month = String(isoDate.getMonth() + 1).padStart(2, "0");
+    let year = isoDate.getFullYear();
+
+    let datefinal = todayDate.padStart(2, "0");
+    const datePattern = year + "-" + month + "-" + datefinal
+
+
+</script>
