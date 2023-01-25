@@ -38,7 +38,7 @@ Step: 3
 
 These are the routes which you will fing in this peoject ans their uses.
 
-- localhost:4000/ => where you will login using email and password.
+- localhost:5000/ => where you will login using email and password.
 - /register => where you can register yourself
  
 - /todo =>  In this route you can create a new todo
